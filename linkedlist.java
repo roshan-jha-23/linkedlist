@@ -36,6 +36,10 @@ class LinkedList<T> {
     }
 
     public void printList() {
+        if(head == null){
+            System.out.println("List is empty");
+            return;
+        }
         Node<T> curr = head;
         while (curr != null) {
             System.out.print(curr.data + "->");
