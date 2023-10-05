@@ -47,6 +47,15 @@ class LinkedList<T> {
         }
         System.out.println("null");
     }
+
+    public void removeFirst() {
+        if (head == null) {
+            System.out.println("List is empty. Cannot remove.");
+            return;
+        }
+
+        head = head.next;
+    }
 static Node removeLastNode(Node head) 
     { 
         if (head == null) 
