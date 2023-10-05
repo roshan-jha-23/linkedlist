@@ -48,14 +48,6 @@ class LinkedList<T> {
         System.out.println("null");
     }
 
-    public void removeFirst() {
-        if (head == null) {
-            System.out.println("List is empty. Cannot remove.");
-            return;
-        }
-        head = head.next;
-    }
-
     public static void main(String args[]) {
         LinkedList<String> ll = new LinkedList<String>();
 //        ll.addLast(10);
@@ -67,8 +59,6 @@ class LinkedList<T> {
         ll.addLast("i");
         ll.addLast("am");
         ll.addLast("Harsh Goyal");
-        ll.printList();
-        ll.removeFirst();
         ll.printList();
     }
 
