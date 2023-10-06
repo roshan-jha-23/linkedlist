@@ -56,7 +56,31 @@ class LinkedList<T> {
 
         head = head.next;
     }
-static Node removeLastNode(Node head) 
+
+    public void removeLast() {
+        if (head == null) {
+            System.out.println("List is empty. Cannot remove.");
+            return;
+        }
+
+        if (head.next == null) {
+            // When the head is the only element
+            head = null;
+            return;
+        }
+
+        Node<T> curr = head;
+        Node<T> prev = null;
+
+        while (curr.next != null) {
+            prev = curr;
+            curr = curr.next;
+        }
+
+        prev.next = null;
+    }
+
+    static Node removeLastNode(Node head)
     { 
         if (head == null) 
             return null; 
