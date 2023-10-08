@@ -126,18 +126,28 @@ class LinkedList<T> {
         node = prev;
         return node;
     }
+    // function to give the sum of all the data in the nodes.
+    public int sum() {
+        int sum = 0;
+        Node<T> curr = head;
+        while (curr != null) {
+            sum += (int) curr.data;
+            curr = curr.next;
+        }
+        return sum;
+    }
     public static void main(String args[]) {
-        LinkedList<String> ll = new LinkedList<String>();
-//        ll.addLast(10);
-//        ll.addLast(20);
-//        ll.addLast(30);
-//        ll.addLast(40);
-//        ll.addFirst(50);
-        ll.addLast("Hello");
-        ll.addLast("i");
-        ll.addLast("am");
-        ll.addLast("Harsh Goyal");
-        ll.printList();
+        LinkedList<Integer> ll = new LinkedList<Integer>();
+       ll.addLast(10);
+       ll.addLast(20);
+       ll.addLast(30);
+       ll.addLast(40);
+       ll.addFirst(50);
+        // ll.addLast("Hello");
+        // ll.addLast("i");
+        // ll.addLast("am");
+        // ll.addLast("Harsh Goyal");
+        // ll.printList();
 
         System.out.println("Original List:");
         ll.printList();
