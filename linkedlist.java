@@ -95,7 +95,22 @@ class LinkedList<T> {
         second_last.next = null; 
         return head; 
 
-    } 
+    }
+    
+    /**
+    * This method reverses a singly linked list in-place.
+    * It iterates through the linked list, changing the direction
+    * of each node's 'next' pointer to reverse the list.
+    *
+    * Time Complexity: O(n) - Linear time, where 'n' is the number of nodes in the linked list.
+    *   The method iterates through all 'n' nodes once.
+    *
+    * Space Complexity: O(1) - Constant space, as the method uses a fixed number of pointers (prev, current, next)
+    *   and does not create additional data structures proportional to the input size.
+    *
+    * @param node The head of the linked list to be reversed.
+    * @return The new head of the reversed linked list.
+    */
     Node reverse(Node node)
 
     {
@@ -122,6 +137,12 @@ class LinkedList<T> {
         ll.addLast("i");
         ll.addLast("am");
         ll.addLast("Harsh Goyal");
+        ll.printList();
+
+        System.out.println("Original List:");
+        ll.printList();
+        ll.head = ll.reverse(ll.head);
+        System.out.println("Reversed List:");
         ll.printList();
     }
 
