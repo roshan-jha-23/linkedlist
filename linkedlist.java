@@ -80,14 +80,14 @@ class LinkedList<T> {
         prev.next = null;
     }
 
-    static Node removeLastNode(Node head)
+    public Node<T> removeLastNode(Node<T> head)
     { 
         if (head == null) 
             return null; 
 
         if (head.next == null) {      return null; 
         } 
-        Node second_last = head; 
+        Node<T> second_last = head; 
 
         while (second_last.next.next != null) 
 
@@ -111,12 +111,12 @@ class LinkedList<T> {
     * @param node The head of the linked list to be reversed.
     * @return The new head of the reversed linked list.
     */
-    Node reverse(Node node)
+    Node<T> reverse(Node<T> node)
 
     {
-        Node prev = null;
-        Node current = node;
-        Node next = null;
+        Node<T> prev = null;
+        Node<T> current = node;
+        Node<T> next = null;
         while (current != null) {
             next = current.next;
             current.next = prev;
@@ -126,24 +126,46 @@ class LinkedList<T> {
         node = prev;
         return node;
     }
-    public static void main(String args[]) {
-        LinkedList<String> ll = new LinkedList<String>();
-//        ll.addLast(10);
-//        ll.addLast(20);
-//        ll.addLast(30);
-//        ll.addLast(40);
-//        ll.addFirst(50);
-        ll.addLast("Hello");
-        ll.addLast("i");
-        ll.addLast("am");
-        ll.addLast("Harsh Goyal");
-        ll.printList();
 
+    // function to check the linkedlist is either empty or not
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    // function to give the sum of all the data in the nodes.
+    public int sum(Node<T> head) {
+        if(head.data instanceof String){
+            System.out.println("Cannot find sum of strings");
+            return 0;
+        }
+        int sum = 0;
+        Node<T> curr = head;
+        while (curr != null) {
+            sum += (int)curr.data;
+            curr = curr.next;
+        }
+        return sum;
+    }
+    public static void main(String args[]) {
+
+        // LinkedList<String> ll = new LinkedList<String>();
+        LinkedList<Integer> ll = new LinkedList<>();
+       ll.addLast(10);
+       ll.addLast(20);
+       ll.addLast(30);
+       ll.addLast(40);
+       ll.addFirst(50);
+        // ll.addLast("Hello");
+        // ll.addLast("i");
+        // ll.addLast("am");
+        // ll.addLast("Harsh Goyal");
         System.out.println("Original List:");
         ll.printList();
+        System.out.println("The sum of List is: " + ll.sum(ll.head));
         ll.head = ll.reverse(ll.head);
         System.out.println("Reversed List:");
         ll.printList();
+        System.out.println("The list is empty: " + ll.isEmpty());
     }
 
 }
